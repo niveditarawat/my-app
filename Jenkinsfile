@@ -8,7 +8,7 @@ pipeline {
         stage ('Initialize') {
             steps {
                 echo "M2_HOME = ${M2_HOME}"
-                '''
+               
 				if (isWindows()) {
 				bat '''
                     echo "PATH = ${PATH}"
@@ -40,4 +40,5 @@ pipeline {
         }
     }
 }
+
 }
