@@ -72,4 +72,9 @@
       </plugins>
     </pluginManagement>
   </build>
+  <scm>
+		<url>https://github.com/kevinsawicki/github-maven-example</url>
+		<connection>scm:git:git://github.com/kevinsawicki/github-maven-example.git</connection>
+		<developerConnection>scm:git:git@github.com:kevinsawicki/github-maven-example.git</developerConnection>
+	</scm>
 </project>
