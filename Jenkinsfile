@@ -22,7 +22,7 @@ pipeline {
         stage ('Build') {
             steps {
                
-		bat 'mvn release:prepare release:perform';
+		bat 'mvn clean install';
 				
             }
             post {
