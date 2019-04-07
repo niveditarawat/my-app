@@ -15,7 +15,7 @@ pipeline {
                     echo "M2_HOME = ${M2_HOME}"
                 '''
 		} else{ 
-		   bat '''
+			bat '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 '''
@@ -24,7 +24,7 @@ pipeline {
 		
             
         	}
-	}
+		}
 
         stage ('Build') {
             steps {
@@ -41,13 +41,13 @@ pipeline {
                   mvn clean install
                 '''
 		}
-            }
+		}
+		}
             post {
                 success {
                     junit 'target/surefire-reports/**/*.xml' 
                 }
             }
-        }
+        
     }
 }
-
