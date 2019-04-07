@@ -74,7 +74,7 @@
   </build>
   <scm>
 		<url>https://github.com/niveditarawat/my-app</url>
-		<connection>scm:git:https://github.com/niveditarawat/my-app.git/connection>
+		<connection>scm:git:https://github.com/niveditarawat/my-app.git</connection>
 		<developerConnection>scm:git:https://github.com/niveditarawat/my-app.git</developerConnection>
 	</scm>
 </project>
