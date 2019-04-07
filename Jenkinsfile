@@ -23,7 +23,8 @@ pipeline {
             steps {
                
 		bat 'mvn clean install';
-				
+		   //maven release plugin can be used to auto increment version and and to push to local repository or remote  exus repository
+		//mvn release:prepre release:perform
             }
             post {
                 success {
