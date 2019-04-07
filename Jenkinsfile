@@ -34,12 +34,16 @@ pipeline {
         stage ('Build') {
             steps {
                script {
-		bat 'mvn clean install';
-		   //maven release plugin can be used to auto increment version and and to push to local repository or remote  exus repository
+		      if(isUnix()){
+			      
+			sh 'mvn clean install';
+		      } else{ 
+			      
+			bat 'mvn clean install';
+		      }
 		
-		  bat '''
-                  mvn clean install
-                '''
+		   //maven release plugin can be used to auto increment version and and to push to local repository or remote  exus repository
+	
 	       }
 		}
 		}
