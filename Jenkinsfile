@@ -8,11 +8,20 @@ pipeline {
         stage ('Initialize') {
             steps {
 		    script {
-                       echo "M2_HOME = ${M2_HOME}"
-		bat '''
+			    echo "M2_HOME = ${M2_HOME}"
+			    if(isUNix()){
+				 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
-                '''
+                '''   
+			    } else {
+				bat '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                '''    
+			    }
+                       
+		
                     }
                 
 		}
