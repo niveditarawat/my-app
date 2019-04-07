@@ -14,13 +14,13 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 '''
-				else {
+				} else {
 				sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 '''
 				}
-            }
+            
         }
 		}
 
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 if (isWindows()) {
 				bat 'mvn release:prepare release:perform';
-				else {
+				} else {
 				sh 'mvn release:prepare release:perform';
 				}
             }
@@ -41,4 +41,3 @@ pipeline {
     }
 }
 
-}
