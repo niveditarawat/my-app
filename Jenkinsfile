@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
+	    step{ 
                 echo "M2_HOME = ${M2_HOME}"
                
 		if(isUnix()) { 
@@ -25,10 +26,10 @@ pipeline {
             
         	}
 		}
-
+	}
         stage ('Build') {
             steps {
-               
+		    step{
 		bat 'mvn clean install';
 		   //maven release plugin can be used to auto increment version and and to push to local repository or remote  exus repository
 		//mvn release:prepre release:perform
@@ -43,6 +44,7 @@ pipeline {
 		}
 		}
 		}
+	}
             post {
                 success {
                     junit 'target/surefire-reports/**/*.xml' 
