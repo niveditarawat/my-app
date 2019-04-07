@@ -9,7 +9,7 @@ pipeline {
             steps {
 		    script {
 			    echo "M2_HOME = ${M2_HOME}"
-			    if(isUNix()){
+			    if(isUnix()){
 				 sh '''
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
